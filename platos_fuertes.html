@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos fuertes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Más que un restaurante, una experiencia</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Restaurante</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reservas">Reservas</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Menú
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Entradas</a></li>
+                                    <li><a class="dropdown-item" href="platos_fuertes.html">Platos principales</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="postres.html">Postres</a></li>
+                                    <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button id="dark-mode-toggle" class="btn btn-outline-light">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="modal fade" id="reservas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Reservación</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate method="post" action="datos.php">
+                        <div class="mb-3">
+                            <label for="first-name" class="col-form-label">Nombre *</label>
+                            <input type="text" class="form-control" id="first-name" name="first-name" required>
+                            <div class="valid-feedback">
+                                ¡Valor válido!
+                            </div>
+                            <div class="invalid-feedback">
+                                El campo nombre no puede estar vacío
+                            </div>
+    
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="col-form-label">Apellido *</label>
+                            <input type="text" class="form-control" id="last-name" name="last-name" required>
+                            <div class="valid-feedback">
+                                ¡Valor válido!
+                            </div>
+                            <div class="invalid-feedback">
+                                El campo apellido no puede estar vacío
+                            </div>
+    
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Correo electrónico *</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="valid-feedback">
+                                ¡Valor válido!
+                            </div>
+                            <div class="invalid-feedback">
+                                El email es invalido
+                            </div>
+                        </div>
+    
+    
+                        <div>
+                            <label class="form-control" for="zone">Zona Favorita *</label>
+                            <select class="form-select" aria-label="Seleccionar la zona..." id="zone" name="zone" required>
+                                <option value="" selected disabled>Seleccionar el lugar favorito...</option>
+                                <option value="1">Barra</option>
+                                <option value="2">Salón principal</option>
+                                <option value="3">Terraza</option>
+                            </select>
+                            <div class="valid-feedback">
+                                ¡Valor válido!
+                            </div>
+                            <div class="invalid-feedback">
+                                El campo zona favorita no puede estar vacío
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Comentarios</label>
+                            <textarea class="form-control" id="message-text" name="message-text"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Reservar</button>
+                        </div>
+                    </form>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <img src="./img/local1.jpg" class="d-block w-100" alt="Local 1">
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="./img/local2.jpg" class="d-block w-100" alt="Local 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/local3.jpg" class="d-block w-100" alt="Local 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+    <section class="my-5 p-0">
+        <h1>Nuestros locales ofrecen un ambiente cálido y acogedor</h1>
+        <p>Cada platillo está preparado con ingredientes frescos y recetas tradicionales que te harán sentir como en casa</p>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h3>Estofado de cordero</h3>
+                <div class="col-sm-12 col-md-6">                   
+                    <p>Nuestro Estofado de Cordero es una delicia reconfortante que combina trozos tiernos de cordero cocidos a fuego lento con una mezcla de vegetales frescos y hierbas aromáticas. Cada bocado ofrece un sabor profundo y robusto, realzado por el
+                    vino tinto y el toque sutil del romero y el tomillo. Perfecto para disfrutar en cualquier época del año, este plato tradicional es un homenaje a la cocina casera y te hará sentir como en casa.</p>        
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato1.jpg" alt="">
+                </div>
+            </div>
+            <div class="my-5 p-0">
+                <h3>Bife a la Parrilla</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato2.jpg" alt="">
+                </div>
+                <div class="col-sm-12 col-md-6">                 
+                    <p>El Bife a la Parrilla es una experiencia culinaria que deleita los sentidos. Preparado con cortes seleccionados de carne de res de la más alta calidad, este bife se sazona con una mezcla de especias tradicionales y se cocina a la perfección sobre una parrilla ardiente. </p>
+                              
+                </div>                
+            </div>
+            <div class="my-5 p-0">
+                <h3>Lasaña de Espinacas y Ricota</h3>
+            </div>
+            <div class="row">                
+                <div class="col-sm-12 col-md-6">
+                    <p>Capas de pasta fresca intercaladas con una suave mezcla de espinacas y ricota, cubiertas con salsa bechamel y gratinadas con queso parmesano. Un plato reconfortante y delicioso, perfecto para los amantes de la comida vegetariana.</p>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato3.jpg" alt="">
+                </div>
+            </div>
+            <div class="my-5 p-0">
+                <h3>Camarones al Ajillo</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato4.jpg" alt="">
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p>Jugosos camarones salteados en una fragante mezcla de ajo, aceite de oliva y un toque de guindilla, servidos con un chorrito de limón fresco. Un plato lleno de sabor, ideal como entrante o acompañamiento.</p>
+                </div>
+            </div>
+            <div class="my-5 p-0">
+                <h3>Tallarines a la Boloñesa</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <p>Clásicos tallarines italianos acompañados de una rica salsa boloñesa hecha con carne de res, tomate fresco, cebolla y hierbas aromáticas, cocinada lentamente para intensificar su sabor. Un plato tradicional y reconfortante</p>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato5.jpg" alt="">
+                </div>
+            </div>
+            <div class="my-5 p-0">
+                <h3>Estofado de Res (Beef Stew)</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <img class="img-fluid" src="./img/plato6.jpg" alt="">
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p>Tiernos trozos de carne de res cocinados lentamente con zanahorias, papas, cebolla y apio en una rica y sabrosa salsa de
+                    vino tinto y caldo, aromatizada con hierbas frescas. Un plato reconfortante y lleno de sabor, ideal para cualquier
+                    ocasión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="container my-5 p-0 d-flex justify-content-around w-25">
+        <a href="#" target="_blank"><i style="font-size: 2rem" class="bi bi-instagram"></i></a>
+        <a href="#" target="_blank"><i style="font-size: 2rem" class="bi bi-facebook"></i></i></a>
+        <a href="#" target="_blank"><i style="font-size: 2rem" class="bi bi-youtube"></i></i></a>
+        <a href="#" target="_blank"><i style="font-size: 2rem" class="bi bi-twitter-x"></i></i></a>
+    </footer>
+    <div class="text-center py-3">
+        &copy; DesignAL Todos los derechos reservados
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
